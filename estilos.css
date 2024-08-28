@@ -53,6 +53,10 @@ section {
   padding: 10px;
 }
 
+.card-body img {
+  cursor: grab;
+}
+
 .card-footer {
   background: #6699ff;
   border-radius: 0 0 15px 15px;
@@ -84,7 +88,8 @@ section {
     flex-direction: column;
   }
 
-  aside, section {
+  aside,
+  section {
     flex: 1 0 auto;
   }
 
@@ -102,7 +107,8 @@ section {
     flex-direction: column;
   }
 
-  aside, section {
+  aside,
+  section {
     flex: 1 0 auto;
   }
 
@@ -135,27 +141,32 @@ header {
   align-items: center;
   padding-bottom: 10px;
 }
+
 h1 {
   margin: 20px;
 }
-nav{
-  width: 100%;   
+
+nav {
+  width: 100%;
   background-color: #3498db;
 }
+
 nav ul {
   display: flex;
   list-style-type: none;
   padding: 0;
   margin: 0;
-  
+
 }
+
 nav li {
   flex-grow: 1;
   text-align: center;
 }
+
 nav a {
   display: block;
-  margin:0;
+  margin: 0;
   color: white;
   padding: 10px;
   text-decoration: none;
