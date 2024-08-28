@@ -115,6 +115,11 @@ section {
   .contenedor {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .contenedor-principal {
+    flex-direction: row;
+  }
+
 }
 
 .card-body img {
