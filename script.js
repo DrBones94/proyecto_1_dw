@@ -31,6 +31,16 @@ function dropImage(event) {
   const draggableElement = document.getElementById(id);
   const imagenClonada = draggableElement.cloneNode(true);
   const dropzone = event.target;
+  console.log(draggableElement);
+  console.log(imagenClonada);
+
+  let html = `
+    <div class='card-carrito'>
+      <div class='card-body-carrito'>
+        
+      </div>
+    </div>
+  `
 
   if (dropzone.classList.contains('dropzone')) {
     dropzone.classList.remove('dragzone');

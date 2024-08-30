@@ -57,10 +57,6 @@ section {
   padding: 10px;
 }
 
-.card-body img {
-  cursor: grab;
-}
-
 .card-footer {
   background: #6699ff;
   border-radius: 0 0 15px 15px;
@@ -127,12 +123,6 @@ section {
   .contenedor-principal {
     flex-direction: row;
   }
-
-  /* aside, section {
-    flex: 0 0 auto;
-  } */
-
-
 }
 
 .card-body img {
@@ -195,3 +185,24 @@ nav a:hover {
   background-color: #e9ecef;
 }
 
+.card-body-carrito img {
+  width: 50%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.card-carrito {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 420px;
+  border: 1px solid lightgray;
+  box-shadow: 2px 2px 8px 4px #d3d3d1;
+  border-radius: 15px;
+  font-family: sans-serif;
+}
+
+.card-body-carrito  {
+  padding: 10px;
+}
