@@ -1,8 +1,5 @@
-const imagenes = document.querySelectorAll('img');
+const imagenes = document.querySelectorAll('img[draggable="true"]');
 const dropzones = document.querySelectorAll('.dropzone');
-
-console.log(imagenes);
-console.log(dropzones);
 
 imagenes.forEach(i => {
   i.addEventListener('dragstart', dragStart);
@@ -31,12 +28,13 @@ function dropImage(event) {
   console.log(event)
   event.preventDefault();
   const id = event.dataTransfer.getData('text/plain');
-  const draggableElement = document.getElementById(id)
+  const draggableElement = document.getElementById(id);
+  const imagenClonada = document.draggableElement.cloneNode(true);
   const dropzone = event.target;
 
   if (dropzone.classList.contains('dropzone')) {
     dropzone.classList.remove('dragzone');
     dropzone.innerHTML = '';
-    dropzone.appendChild(draggableElement);
+    dropzone.appendChild(imagenClonada);
   }
 }
