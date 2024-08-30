@@ -1,0 +1,42 @@
+const imagenes = document.querySelectorAll('img');
+const dropzones = document.querySelectorAll('.dropzone');
+
+console.log(imagenes);
+console.log(dropzones);
+
+imagenes.forEach(i => {
+  i.addEventListener('dragstart', dragStart);
+});
+
+dropzones.forEach(dz => {
+  dz.addEventListener('dragover', dragOver);
+  dz.addEventListener('dragleave', dragLeave);
+  dz.addEventListener('drop', dropImage);
+});
+
+function dragStart(event) {
+  event.dataTransfer.setData('text/plain', event.target.id);
+}
+
+function dragOver(event) {
+  event.preventDefault();
+  event.target.classList.add('dragover');
+}
+
+function dragLeave(event) {
+  event.target.classList.remove('dragover');
+}
+
+function dropImage(event) {
+  console.log(event)
+  event.preventDefault();
+  const id = event.dataTransfer.getData('text/plain');
+  const draggableElement = document.getElementById(id)
+  const dropzone = event.target;
+
+  if (dropzone.classList.contains('dropzone')) {
+    dropzone.classList.remove('dragzone');
+    dropzone.innerHTML = '';
+    dropzone.appendChild(draggableElement);
+  }
+}
