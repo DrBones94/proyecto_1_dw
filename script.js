@@ -25,7 +25,6 @@ function dragLeave(event) {
 }
 
 function dropImage(event) {
-  console.log(event)
   event.preventDefault();
   const id = event.dataTransfer.getData('text/plain');
   const draggableElement = document.getElementById(id);
@@ -37,14 +36,14 @@ function dropImage(event) {
   let html = `
     <div class='card-carrito'>
       <div class='card-body-carrito'>
-        
+        ${imagenClonada}
       </div>
     </div>
   `
 
   if (dropzone.classList.contains('dropzone')) {
     dropzone.classList.remove('dragzone');
-    dropzone.innerHTML = '';
-    dropzone.appendChild(imagenClonada);
+    dropzone.insertAdjacentHTML('beforeend', html);
+    // dropzone.appendChild(imagenClonada);
   }
 }
