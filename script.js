@@ -36,7 +36,7 @@ function dropImage(event) {
   let html = `
     <div class='card-carrito'>
       <div class='card-body-carrito'>
-        ${imagenClonada}
+        ${draggableElement}
       </div>
     </div>
   `
@@ -44,6 +44,7 @@ function dropImage(event) {
   if (dropzone.classList.contains('dropzone')) {
     dropzone.classList.remove('dragzone');
     dropzone.insertAdjacentHTML('beforeend', html);
+    
     // dropzone.appendChild(imagenClonada);
   }
 }
