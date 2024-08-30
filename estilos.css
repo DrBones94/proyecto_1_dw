@@ -128,9 +128,9 @@ section {
     flex-direction: row;
   }
 
-  aside, section {
+  /* aside, section {
     flex: 0 0 auto;
-  }
+  } */
 
 
 }
