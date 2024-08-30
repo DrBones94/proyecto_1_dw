@@ -29,7 +29,7 @@ function dropImage(event) {
   event.preventDefault();
   const id = event.dataTransfer.getData('text/plain');
   const draggableElement = document.getElementById(id);
-  const imagenClonada = document.draggableElement.cloneNode(true);
+  const imagenClonada = draggableElement.cloneNode(true);
   const dropzone = event.target;
 
   if (dropzone.classList.contains('dropzone')) {
