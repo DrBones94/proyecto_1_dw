@@ -45,8 +45,8 @@ function dropImage(event) {
 
   if (dropzone.classList.contains('dropzone')) {
     dropzone.classList.remove('dragzone');
-    // dropzone.insertAdjacentHTML('beforeend', html);
+    dropzone.insertAdjacentHTML('beforeend', html);
     
-    dropzone.appendChild(html);
+    // dropzone.appendChild(html);
   }
 }
