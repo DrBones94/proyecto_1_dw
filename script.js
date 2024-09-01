@@ -1,3 +1,17 @@
+// Simulacion de base de datos con local storage
+const productos = [
+  {id: 'img1', nombre: 'Floor chicken', precio: 100},
+  {id: 'img2', nombre: 'Fear the old blood', precio: 55},
+  {id: 'img3', nombre: 'Gameblast', precio: 60},
+  {id: 'img4', nombre: 'Nuka cola cap', precio: 95},
+  {id: 'img5', nombre: 'Vault boy', precio: 155}
+];
+
+localStorage.setItem('productos', JSON.stringify(productos));
+
+var sumaTotal = 0.0;
+var cantidadTotal = 0;
+
 const imagenes = document.querySelectorAll('img[draggable="true"]');
 const dropzones = document.querySelectorAll('.dropzone');
 
@@ -28,10 +42,12 @@ function dropImage(event) {
   event.preventDefault();
   const id = event.dataTransfer.getData('text/plain');
   const draggableElement = document.getElementById(id);
-  const imagenClonada = draggableElement.cloneNode(true);
   const dropzone = event.target;
-  console.log(draggableElement);
-  console.log(imagenClonada);
+  const total = document.getElementById('total');
+  const cantidad = document.getElementById('cantidad');
+  const productosLocalStorage = JSON.parse(localStorage.getItem('productos'));
+  const producto = productosLocalStorage.find(p => p.id == id);
+
 
   let html = `
     <div class='card-carrito'>
@@ -41,12 +57,14 @@ function dropImage(event) {
     </div>
   `
 
-  console.log(html)
-
   if (dropzone.classList.contains('dropzone')) {
     dropzone.classList.remove('dragzone');
     dropzone.insertAdjacentHTML('beforeend', html);
-    
-    // dropzone.appendChild(html);
+
+   
+    sumaTotal += producto.precio;
+    cantidadTotal ++;
+    total.innerHTML = 'Total de compra: GTQ ' + sumaTotal;
+    cantidad.innerHTML = 'Cantidad de productos: ' + cantidadTotal;
   }
 }
